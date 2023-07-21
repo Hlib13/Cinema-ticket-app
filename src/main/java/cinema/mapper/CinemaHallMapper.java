@@ -1,4 +1,4 @@
-package cinema.service.mapper;
+package cinema.mapper;
 
 import cinema.dto.request.CinemaHallRequestDto;
 import cinema.dto.response.CinemaHallResponseDto;

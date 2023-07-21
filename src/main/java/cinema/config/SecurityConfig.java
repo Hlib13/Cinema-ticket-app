@@ -1,8 +1,6 @@
 package cinema.config;
 
 import cinema.model.Role;
-import cinema.service.jwt.JwtConfigurer;
-import cinema.service.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -18,14 +16,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String USER = Role.RoleName.USER.name();
     private final PasswordEncoder passwordEncoder;
     private final UserDetailsService userDetailsService;
-    private final JwtTokenProvider jwtTokenProvider;
 
     public SecurityConfig(PasswordEncoder passwordEncoder,
-                          UserDetailsService userDetailsService,
-                          JwtTokenProvider jwtTokenProvider) {
+                          UserDetailsService userDetailsService) {
         this.passwordEncoder = passwordEncoder;
         this.userDetailsService = userDetailsService;
-        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     @Autowired
@@ -44,8 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/movies-session/*", "/user/by-email").hasRole(ADMIN)
                 .antMatchers("/orders/**", "/shopping-carts/**").hasRole(USER)
                 .anyRequest().authenticated()
-                .and()
-                .apply(new JwtConfigurer(jwtTokenProvider))
                 .and()
                 .formLogin()
                 .permitAll()

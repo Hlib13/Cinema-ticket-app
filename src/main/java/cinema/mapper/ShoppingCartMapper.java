@@ -1,4 +1,4 @@
-package cinema.service.mapper;
+package cinema.mapper;
 
 import cinema.dto.response.ShoppingCartResponseDto;
 import cinema.model.ShoppingCart;

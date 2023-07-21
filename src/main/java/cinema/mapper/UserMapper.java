@@ -1,4 +1,4 @@
-package cinema.service.mapper;
+package cinema.mapper;
 
 import cinema.dto.response.UserResponseDto;
 import cinema.model.User;

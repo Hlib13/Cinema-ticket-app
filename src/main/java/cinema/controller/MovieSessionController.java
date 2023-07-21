@@ -2,10 +2,10 @@ package cinema.controller;
 
 import cinema.dto.request.MovieSessionRequestDto;
 import cinema.dto.response.MovieSessionResponseDto;
+import cinema.mapper.RequestDtoMapper;
+import cinema.mapper.ResponseDtoMapper;
 import cinema.model.MovieSession;
 import cinema.service.MovieSessionService;
-import cinema.service.mapper.RequestDtoMapper;
-import cinema.service.mapper.ResponseDtoMapper;
 import cinema.util.DateTimePatternUtil;
 import java.time.LocalDate;
 import java.util.List;
@@ -31,7 +31,8 @@ public class MovieSessionController {
             movieSessionResponseDtoMapper;
 
     public MovieSessionController(MovieSessionService movieSessionService,
-                                  RequestDtoMapper<MovieSessionRequestDto, MovieSession> movieSessionRequestDtoMapper,
+                                  RequestDtoMapper<MovieSessionRequestDto, MovieSession>
+                                          movieSessionRequestDtoMapper,
                                   ResponseDtoMapper<MovieSessionResponseDto, MovieSession>
                                           movieSessionResponseDtoMapper) {
         this.movieSessionService = movieSessionService;
@@ -49,7 +50,9 @@ public class MovieSessionController {
     @GetMapping("/available")
     public List<MovieSessionResponseDto> findAvailableSessions(@RequestParam Long movieId,
                                                                @RequestParam
-                                                               @DateTimeFormat(pattern = DateTimePatternUtil.DATE_PATTERN)
+                                                               @DateTimeFormat(pattern =
+                                                                       DateTimePatternUtil
+                                                                               .DATE_PATTERN)
                                                                LocalDate date) {
         return movieSessionService.findAvailableSessions(movieId, date)
                 .stream()

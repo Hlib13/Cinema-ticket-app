@@ -2,10 +2,10 @@ package cinema.controller;
 
 import cinema.dto.request.CinemaHallRequestDto;
 import cinema.dto.response.CinemaHallResponseDto;
+import cinema.mapper.RequestDtoMapper;
+import cinema.mapper.ResponseDtoMapper;
 import cinema.model.CinemaHall;
 import cinema.service.CinemaHallService;
-import cinema.service.mapper.RequestDtoMapper;
-import cinema.service.mapper.ResponseDtoMapper;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +22,10 @@ public class CinemaHallController {
     private final ResponseDtoMapper<CinemaHallResponseDto, CinemaHall> cinemaHallResponseDtoMapper;
 
     public CinemaHallController(CinemaHallService cinemaHallService,
-                                RequestDtoMapper<CinemaHallRequestDto, CinemaHall> cinemaHallRequestDtoMapper,
-                                ResponseDtoMapper<CinemaHallResponseDto, CinemaHall> cinemaHallResponseDtoMapper) {
+                                RequestDtoMapper<CinemaHallRequestDto, CinemaHall>
+                                        cinemaHallRequestDtoMapper,
+                                ResponseDtoMapper<CinemaHallResponseDto, CinemaHall>
+                                        cinemaHallResponseDtoMapper) {
         this.cinemaHallService = cinemaHallService;
         this.cinemaHallRequestDtoMapper = cinemaHallRequestDtoMapper;
         this.cinemaHallResponseDtoMapper = cinemaHallResponseDtoMapper;

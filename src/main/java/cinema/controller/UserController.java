@@ -1,9 +1,9 @@
 package cinema.controller;
 
 import cinema.dto.response.UserResponseDto;
+import cinema.mapper.ResponseDtoMapper;
 import cinema.model.User;
 import cinema.service.UserService;
-import cinema.service.mapper.ResponseDtoMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

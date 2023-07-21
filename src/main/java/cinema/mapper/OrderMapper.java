@@ -1,4 +1,4 @@
-package cinema.service.mapper;
+package cinema.mapper;
 
 import cinema.dto.response.OrderResponseDto;
 import cinema.model.Order;
