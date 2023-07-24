@@ -1,12 +1,13 @@
-package cinema.mapper;
+package cinema.mapper.impl;
 
 import cinema.dto.response.OrderResponseDto;
+import cinema.mapper.ResponseDtoMapper;
 import cinema.model.Order;
 import cinema.model.Ticket;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrderMapper implements ResponseDtoMapper<OrderResponseDto, Order> {
+public class OrderMapperImpl implements ResponseDtoMapper<OrderResponseDto, Order> {
     @Override
     public OrderResponseDto mapToDto(Order order) {
         OrderResponseDto responseDto = new OrderResponseDto();

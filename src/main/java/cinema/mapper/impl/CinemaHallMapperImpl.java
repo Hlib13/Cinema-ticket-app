@@ -1,12 +1,14 @@
-package cinema.mapper;
+package cinema.mapper.impl;
 
 import cinema.dto.request.CinemaHallRequestDto;
 import cinema.dto.response.CinemaHallResponseDto;
+import cinema.mapper.RequestDtoMapper;
+import cinema.mapper.ResponseDtoMapper;
 import cinema.model.CinemaHall;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CinemaHallMapper implements RequestDtoMapper<CinemaHallRequestDto, CinemaHall>,
+public class CinemaHallMapperImpl implements RequestDtoMapper<CinemaHallRequestDto, CinemaHall>,
         ResponseDtoMapper<CinemaHallResponseDto, CinemaHall> {
     @Override
     public CinemaHall mapToModel(CinemaHallRequestDto dto) {

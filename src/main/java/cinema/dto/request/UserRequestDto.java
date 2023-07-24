@@ -16,6 +16,18 @@ public class UserRequestDto {
     private String password;
     private String repeatPassword;
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -9,6 +9,14 @@ public class CinemaHallRequestDto {
     @Size(max = 200)
     private String description;
 
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getCapacity() {
         return capacity;
     }

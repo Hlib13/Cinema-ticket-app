@@ -1,12 +1,14 @@
-package cinema.mapper;
+package cinema.mapper.impl;
 
 import cinema.dto.request.MovieRequestDto;
 import cinema.dto.response.MovieResponseDto;
+import cinema.mapper.RequestDtoMapper;
+import cinema.mapper.ResponseDtoMapper;
 import cinema.model.Movie;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MovieMapper implements RequestDtoMapper<MovieRequestDto, Movie>,
+public class MovieMapperImpl implements RequestDtoMapper<MovieRequestDto, Movie>,
         ResponseDtoMapper<MovieResponseDto, Movie> {
     @Override
     public Movie mapToModel(MovieRequestDto dto) {
